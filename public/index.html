@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A transparent crypto research assistant powered by repeatable Pocket calls." />
+    <title>Crypto Research Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark"><span></span><span></span></div>
+          <div><div class="eyebrow">POCKET WORKFLOW</div><div class="brand-name">CR / Research Ledger</div></div>
+        </div>
+        <div class="topbar-status"><span class="status-dot"></span><span>MAINNET ROUTE</span><code>agent.pocket.network</code></div>
+      </header>
+
+      <main class="layout">
+        <aside class="control-panel">
+          <div class="eyebrow">01 / START A RUN</div>
+          <h1>Research with receipts.</h1>
+          <p class="lede">Turn a crypto topic into a compact brief with source evidence, visible uncertainty, and a real Pocket call trail.</p>
+
+          <form id="research-form">
+            <label for="topic">Topic</label>
+            <textarea id="topic" name="topic" rows="5" placeholder="e.g. How does Pocket Network's relay marketplace work?" required></textarea>
+            <button id="run-button" type="submit"><span class="button-icon">↗</span><span>Run Pocket research</span></button>
+          </form>
+
+          <div class="guardrail">
+            <div class="guardrail-title"><span class="shield">◈</span> TEST GUARDRAIL</div>
+            <p>First-run budget is capped at <strong>$0.020000</strong>. The workflow runs one search and up to two page extracts.</p>
+          </div>
+
+          <div class="service-stack">
+            <div class="eyebrow">APPROVED SERVICES</div>
+            <div class="service-row"><span class="service-line"></span><div><strong>Search</strong><code>agentsearch-web-search-v1</code></div><span class="service-price">$0.005</span></div>
+            <div class="service-row"><span class="service-line"></span><div><strong>Reading</strong><code>agentsearch-web-extract-v1</code></div><span class="service-price">$0.005</span></div>
+          </div>
+        </aside>
+
+        <section class="content-panel">
+          <div class="content-head">
+            <div><div class="eyebrow">02 / EVIDENCE BRIEF</div><h2 id="result-title">Waiting for a topic</h2></div>
+            <div class="run-counter"><span class="eyebrow">POCKET CALLS</span><strong id="call-count">0</strong></div>
+          </div>
+          <div id="empty-state" class="empty-state"><div class="empty-glyph">⌁</div><h3>The brief will appear here</h3><p>Run a topic to see source observations, single-source flags, and the exact Pocket operations behind the result.</p></div>
+          <div id="loading-state" class="loading-state hidden"><div class="loader"></div><div><strong>Running through Pocket…</strong><p id="loading-copy">Preparing a paid search call.</p></div></div>
+          <div id="result" class="hidden">
+            <div id="warning-banner" class="warning-banner hidden"></div>
+            <div class="brief-card"><div class="card-kicker">BRIEF / GENERATED FROM POCKET RESPONSES</div><p id="brief-text"></p></div>
+            <div class="section-head"><div><div class="eyebrow">FINDINGS</div><h3>What the sources say</h3></div><span class="legend"><span class="legend-dot amber"></span> single source</span></div>
+            <div id="claims" class="claims"></div>
+            <div class="section-head sources-head"><div><div class="eyebrow">SOURCE SET</div><h3>Pages read through Pocket</h3></div></div>
+            <div id="sources" class="sources"></div>
+            <div class="section-head audit-head"><div><div class="eyebrow">AUDIT TRAIL</div><h3>Real calls in this run</h3></div><span id="budget-note" class="budget-note"></span></div>
+            <div id="audit" class="audit"></div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer"><span>Crypto Research Assistant</span><span>Search and extract stay inside Pocket's Agentic Portal.</span><span id="wallet-state">Protected wallet not shown</span></footer>
+    </div>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
